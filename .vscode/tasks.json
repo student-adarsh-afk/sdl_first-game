@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build SDL2 App (MSYS2 MinGW64)",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-IC:/msys64/mingw64/include/SDL2",
+        "-Iinclude",
+        "src/main.cpp",
+        "src/renderWindow.cpp",
+        "src/entity.cpp",
+        "-LC:/msys64/mingw64/lib",
+        "-lmingw32",
+        "-lSDL2main",
+        "-lSDL2",
+        "-lSDL2_image",
+        "-lSDL2_ttf",
+        "-o",
+        "build.exe"
+      ],
+      "options": {
+        "env": {
+          "PATH": "C:/msys64/mingw64/bin;${env:PATH}"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
